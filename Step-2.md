@@ -135,7 +135,6 @@ Validate your deployment by checking if the service is available from the intern
 * You should see a message 'Ready to receive requests'.
 
 **See the values for your service**
-Your ALB routes traffic based on the request URL. To see each service, simply add the service name to the end of your DNS Name like this:
-* `http://[DNS name]/api`
+Your ALB routes traffic based on the request URL. To see each service, simply add the service name to the end of your DNS Name like this: `http://[DNS name]/api`
 
 #### [Next](/Step-3.md)
