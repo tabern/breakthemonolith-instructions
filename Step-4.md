@@ -19,6 +19,7 @@ You will see your stack with the orange `CREATE_IN_PROGRESS`. You can select the
 
 **Pro Tip**
 You can also use the AWS CLI to deploy Cloudformation Stacks. Just add in your region to this code and run in the terminal from `amazon-ecs-nodejs-microservices/3-microservices`.
+
 ```
 $ aws cloudformation deploy \
    --template-file infrastructure/ecs.yml \

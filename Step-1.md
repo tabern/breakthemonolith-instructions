@@ -4,7 +4,7 @@
 In the next few steps, we are going to be using **Docker**, **Github**, **Amazon ECS**, and **Amazon ECR** to deploy code into containers. To make sure you can complete these steps, you'll need to ensure you have the right tools.
 
 **Have an AWS Account**
-If you don't already have an account with AWS, you can [sign up here](https://portal.aws.amazon.com/gp/aws/developer/registration/index.html). All the excercises in this tutorial are covered under [AWS Free Tier](https://aws.amazon.com/free/). *Note: some of the services we'll be using may require your account to be active for more than 12 hours. If you experience difficulty with any services and have a newly created account, please wait a few hours and try again*
+If you don't already have an account with AWS, you can [sign up here](https://portal.aws.amazon.com/gp/aws/developer/registration/index.html). **All the excercises in this tutorial are covered under [AWS Free Tier](https://aws.amazon.com/free/)**. *Note: some of the services we'll be using may require your account to be active for more than 12 hours. If you experience difficulty with any services and have a newly created account, please wait a few hours and try again*
 
 **Install Docker**
 We'll be using Docker to build the image files that we will run in our containers. Docker is an open source project and you can dowload it for free here [for mac](https://docs.docker.com/docker-for-mac/install/) or [for windows](https://docs.docker.com/docker-for-windows/install/).
@@ -13,7 +13,8 @@ Once docker is installed, you can check it's working by running `docker --versio
 You should see something like this `Docker version 17.03.0-ce, build 60ccb22`.
 
 **Install the AWS CLI**
-* We'll use the AWS Command Line Interface (CLI) to push our images to Amazon EC2 Container Repository. Install the CLI [here](http://docs.aws.amazon.com/cli/latest/userguide/installing.html)
+* We'll use the AWS Command Line Interface (CLI) to push our images to Amazon EC2 Container Repository. Learn more about the CLI [here](http://docs.aws.amazon.com/cli/latest/userguide/installing.html)
+Install the CLI with the following command: `pip install awscli --upgrade --user`.
 
 * Once the AWS CLI is installed, you can check it's working by running `aws --version` in the terminal.
 You should see something like this: `aws-cli/1.11.63 Python/2.7.10 Darwin/16.5.0 botocore/1.5.26`.
