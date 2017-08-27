@@ -64,10 +64,19 @@ Repeat these steps for each of your services across both clusters.
 [image 5.4 - Delete CF]
 
 ---
-#### 5. Delete you Amazon ECR Repositories
+#### 5. Deregister Task Definitions
+* Navigate to [Task Definitions](https://console.aws.amazon.com/ecs/home?#/taskDefinitions) in the Amazon ECR console.
+* Click into a task definition. You will see a list of task definition revisions.
+* Select all using the checkbox at the top of the list.
+* Select `Actions` > `Deregister` and confirm.
+
+**Repeat these steps for all four task definitions**
+
+---
+#### 6. Delete Amazon ECR Repositories
 * Navigate to [Repositories](https://console.aws.amazon.com/ecs/home?#/repositories) in the Amazon ECR console.
 * Check the box at the top of the list to select all repositories
 * Select `Delete Repository` and confirm.
 * You will see a confirmation message and should have no more repositories.
 
-[image 5.5 - Delete Repos]
+[image 5.6 - Delete Repos]
