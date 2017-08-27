@@ -113,8 +113,6 @@ The microservices stack we just deployed has its own VPC. It is important to con
 * threads
 * users
 
-[target group success image]
-
 ---
 #### 5. Configure Listener
 Like in [Part 2](/getting-started/container-microservices-tutorial/step-two/), the [listener](http://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-listeners.html) checks for incoming connection requests to your ALB in order to route traffic appropriately.
@@ -145,7 +143,7 @@ _For example: Path = `/api/posts*` forward to `posts`_
   * users
 * Select the back arrow at the top left of the page to return to the load balancer console.
 
-[image of listeners]
+[4.5 - Listener Rules]
 
 ---
 #### 6. Deploy your Microservices
@@ -171,6 +169,7 @@ Target group name = select your group: `[service-name]`
 * Select `View Service`
 
 It should only take a few seconds for all your servics to start.
+
 [image 4.6 - Cluster State]
 
 ---
@@ -182,6 +181,7 @@ Validate your deployment by checking if the service is available from the intern
 * Select your load balancer `demo-microservices`.
 * Copy and paste the value for `DNS name` into your browser.
 * You should see a message 'Ready to receive requests'.
+
 [4.7 - Ready to Receive]
 
 **See the values for each microservice**
