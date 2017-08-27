@@ -41,3 +41,5 @@ $ aws cloudformation deploy \
 
 ---
 _to be continued..._
+
+#### [Next](/Step-5.md)

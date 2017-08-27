@@ -50,3 +50,5 @@ _example: `docker tag posts:latest [account-id].dkr.ecr.us-west-2.amazonaws.com/
 If you navigate to your ECR repository, you should see your image tagged `latest`.
 
 **NOTE: Be sure to build and tag all three images.**
+
+#### [Next](/Step-4.md)
