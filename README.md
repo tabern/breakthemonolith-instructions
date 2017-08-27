@@ -1,4 +1,4 @@
-# breakthemonolith-instructions
+## Break the Monolith: Instructions
 Each README in this repo holds the instructions for implementing https://github.com/awslabs/amazon-ecs-nodejs-microservices.
 
 1. [Containerize the Monolith](/Step-1.md)
