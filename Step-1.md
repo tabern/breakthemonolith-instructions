@@ -54,7 +54,7 @@ Take a few minutes to click through the files and familiarize yourself with the 
 
 ---
 #### 4. Prepare & Push the Docker Image
-Open your terminal, and set your path to the `2-containerized/services/api` section of the GitHub code. `~/amazon-ecs-nodejs-microservices/2-containerized/api`
+Open your terminal, and set your path to the `2-containerized/services/api` section of the GitHub code. `~/amazon-ecs-nodejs-microservices/2-containerized/services/api`
 
 **Authenticate Docker Login with AWS**
 1. Run `aws ecr get-login --no-include-email --region [region]`
