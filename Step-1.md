@@ -68,7 +68,7 @@ In the terminal, run `docker build -t api .` *Note, the `.` is important here.*
 
 **Tag the Image**
 After the build completes, tag the image so you can push it to the repository:
-`docker tag [account-id].dkr.ecr.[region].amazonaws.com/api:latest`
+`docker tag api:latest [account-id].dkr.ecr.[region].amazonaws.com/api:latest`
 
 **Push the image to ECR**
 Run `docker push` to push your imaage to ECR:
