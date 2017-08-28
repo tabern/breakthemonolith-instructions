@@ -23,7 +23,7 @@ You will see your stack with the orange `CREATE_IN_PROGRESS`. You can select the
 ### 2. Check your cluster is running.
 
 * Navigate to the [Amazon ECS console](https://console.aws.amazon.com/ecs/home?). Your cluster should appear in the list.
-![image 2.2 - Cluster Active](images/2,2a.png)
+![image 2.2 - Cluster Active](images/2.2a.png)
 
 * Clicking into the cluster, select the 'Tasks' tab, no tasks will be running.
 ![image 2.2 - Tasks](images/2.2c.png)
