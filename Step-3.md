@@ -50,6 +50,6 @@ _example: `docker tag posts:latest [account-id].dkr.ecr.us-west-2.amazonaws.com/
 
 If you navigate to your ECR repository, you should see your images tagged with `v1`.
 
-**NOTE: Be sure to build and tag all three images.**
+**NOTE: Be sure to build, tag, and push all three images.**
 
 #### [Next](/Step-4.md)

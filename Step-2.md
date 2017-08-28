@@ -19,8 +19,18 @@ You will see your stack with the orange `CREATE_IN_PROGRESS`. You can select the
 
 ![image 2.1 - CF Creation](images/2.1-stack.png)
 
+**Pro Tip**
+You can also use the AWS CLI to deploy Cloudformation Stacks. Just add in your region to this code and run in the terminal from `amazon-ecs-nodejs-microservices/3-microservices`.
+```
+$ aws cloudformation deploy \
+   --template-file infrastructure/ecs.yml \
+   --region <region> \
+   --stack-name Nodejs-Microservices \
+   --capabilities CAPABILITY_NAMED_IAM
+```
+
 ----
-### 2. Check your cluster is running.
+#### 2. Check your cluster is running.
 
 * Navigate to the [Amazon ECS console](https://console.aws.amazon.com/ecs/home?). Your cluster should appear in the list.
 ![image 2.2 - Cluster Active](images/2.2-cluster.png)
