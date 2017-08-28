@@ -17,13 +17,13 @@ Select `Next`.
 6. Check the box at the bottom of the next page and select `Create`.
 You will see your stack with the orange `CREATE_IN_PROGRESS`. You can select the refresh button at the top right of the screen to check on the progress. This process typically takes under 5 minutes.
 
-![image 2.1 - CF Creation](images/2.1 - CF Creation.png)
+![image 2.1 - CF Creation](images/2.1.png)
 
 ----
 ### 2. Check your cluster is running.
 
 * Navigate to the [Amazon ECS console](https://console.aws.amazon.com/ecs/home?). Your cluster should appear in the list.
-[image 2.2 - Cluster Active]
+![image 2.2 - Cluster Active](images/2,2.png)
 
 * Clicking into the cluster, select the 'Tasks' tab, no tasks will be running.
 [image 2.2 - Tasks]
