@@ -112,7 +112,7 @@ _For example: Path = `/api/posts*` forward to `posts`_
 ![4.3 - Listener Rules](images/4.3-rules.png)
 
 ---
-#### 3. Deploy your Microservices
+#### 4. Deploy your Microservices
 Now, we'll deploy our three services onto our cluster. Repeat these steps for each of our three services:
 
 * Navigate to the 'Clusters' menu on the left side of the Amazon ECS console.
@@ -136,19 +136,43 @@ Target group name = select your group: `[service-name]`
 
 It should only take a few seconds for all your services to start. Double check that all services and tasks are running and healthy before you proceed.
 
-![image 4.6 - Cluster State](images/4.6-cluster.png)
+![image 4.4 - Cluster State](images/4.4-cluster.png)
 
 ---
-#### 7. Validate your Deployment (optional)
-Validate your deployment by checking if the service is available from the internet and pinging it.
+#### 5. Switch over traffic to your microservices
+Right now, your microservices are running but all traffic is going to your monolith.
 
-**To find your service URL:**
+**Update Listener Rules to route your traffic**
+* Navigate to the [Load Balancer section of the EC2 Console](https://console.aws.amazon.com/ec2/v2/home?#LoadBalancers:)
+* Select `View/edit rules >` for the listener on the `demo` load balancer.
+* Delete the first rule (`/api*` forwards to `api`).
+* Update the default rule to forward to `drop-traffic`.
+
+Your rules should look like this:
+![images - 4.5 - rules](images/4.5-rules.png)
+
+**Turn off the Monolith**
+Now, traffic is flowing to your microservices and we can spin down our Monolith service.
+* Navigate back to your Amazon ECS cluster `BreakTheMonolith-Demo-ECSCluster`.
+* Select the `api` service and then `Update`.
+* Change **Number of Tasks** to `0`.
+* Select `Update Service`.
+
+Amazon ECS will now drain any connections from containers the service has deployed on the cluster then stop the containers. If you refresh the _Deployments_ or _Tasks_ lists after about 30 seconds, you'll see that the number of tasks will drop to 0. The service is still active, so if you needed to roll back for any reason, you could simply update it to deploy more tasks.
+
+* Select the `api` service and then `Delete` and confirm delete.
+
+You've now fully transitioned your node.js from the monolith to microservices, without _**any downtime**_!
+
+---
+#### 6. Validate your Deployment
+
+**Find your service URL:**
+This is the same URL that you used in Part 2 of this tutorial.
 * Navigate to the [Load Balancers](https://console.aws.amazon.com/ec2/v2/home?#LoadBalancers:) section of the EC2 Console.
 * Select your load balancer `demo-microservices`.
 * Copy and paste the value for `DNS name` into your browser.
 * You should see a message 'Ready to receive requests'.
-
-![4.7 - Ready to Receive](images/4.7-ready.png)
 
 **See the values for each microservice**
 Your ALB routes traffic based on the request URL. To see each service, simply add the service name to the end of your DNS Name like this:
@@ -156,8 +180,8 @@ Your ALB routes traffic based on the request URL. To see each service, simply ad
 * `http://[DNS name]/api/threads`
 * `http://[DNS name]/api/posts`
 
-![IMAGE 4.7 - threads](images/4.7-threads.png)
+![IMAGE 4.6 - threads](images/4.6-threads.png)
 
-You can also use tools such as [Postman](https://www.getpostman.com/) for testing your APIs.
+Notice that these URLs perform _exactly_ the same as when the monolith is deployed. This is important because any APIs or consumers that would expect to connect to this app would not be affected by the changes we made. Going from monolith to microservices required no changes to other services.
 
 #### [Next](/Step-5.md)
