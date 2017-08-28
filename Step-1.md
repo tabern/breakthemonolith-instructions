@@ -72,8 +72,8 @@ In the terminal, run `docker build -t api .` *Note, the `.` is important here.*
 
 **Tag the Image**
 After the build completes, tag the image so you can push it to the repository:
-`docker tag api:(date +%s) [account-id].dkr.ecr.[region].amazonaws.com/api:(date +%s)`
-_Pro tip: the `(date +%s)` represents the image build version. Every time you build the image, you should increment this version number. Here, we are inserting a timestamp to tag the image. This allows you to roll back to a previous container image build if needed._
+`docker tag api:latest [account-id].dkr.ecr.[region].amazonaws.com/api:$(date +%s)`
+_Pro tip: the `$(date +%s)` represents the image build version. Every time you build the image, you should increment this version number. Here, we are inserting a timestamp to tag the image. This is a best practice that allows you to easily revert to a previous container image build in the future._
 
 **Push the image to ECR**
 Run `docker push` to push your imaage to ECR:
