@@ -79,7 +79,7 @@ If this is not your first time using this AWS account, you may have multiple VPC
 `Interval = 6`
 * Select `Create`.
 
-![image 2.4 - Target Group](images/2,4t.png)
+![image 2.4 - Target Group](images/2.4t.png)
 
 ---
 #### 5. Configure the Application Load Balancer: Listener
@@ -96,7 +96,7 @@ Port = `80`
 Default target group = `api`
 * Click `Create`.
 
-![image 2.5 - Listener](images/2,5,png)
+![image 2.5 - Listener](images/2.5,png)
 
 ---
 #### 6. Deploy the Monolith as a Service
@@ -120,7 +120,7 @@ Target group name = select your group: `api`
 * Select `Create Service`.
 * Select `View Service`.
 
-![image 2.6 - Running Service](images/2,6,png)
+![image 2.6 - Running Service](images/2.6,png)
 
 Nice work! You now have a running service. It may take a minute for the container to register as healthy and begin receiving traffic.
 
