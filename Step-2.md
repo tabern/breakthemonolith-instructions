@@ -26,10 +26,10 @@ You will see your stack with the orange `CREATE_IN_PROGRESS`. You can select the
 ![image 2.2 - Cluster Active](images/2,2a.png)
 
 * Clicking into the cluster, select the 'Tasks' tab, no tasks will be running.
-![image 2.2 - Tasks](images/2.2b.png)
+![image 2.2 - Tasks](images/2.2c.png)
 
 * Select the 'ECS Instances' tab, you will see the two EC2 Instances the Cloudformation template created.
-![image 2.2 - Instances](images/2.2c.png)
+![image 2.2 - Instances](images/2.2b.png)
 
 ---
 #### 3. Write a Task Definition
