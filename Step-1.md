@@ -65,13 +65,15 @@ Open your terminal, and set your path to the `2-containerized/services/api` sect
 If you have never used the AWS CLI before, you may need to [configure your credentials](http://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html].
 2. You're going to get a _massive_ output starting with `docker login -u AWS -p` ... Copy this entire output, paste, and run it in the terminal.
 3. You should see `Login Succeeded`.
+_Note: If this login does not succeed, it may be because you have a newer version of Docker that has depreciated the `-e none` flag. To correct this, paste the output into your text editor, remove `-e none` from the end of the output, and run the updated output in the terminal._
 
 **Build the Image**
 In the terminal, run `docker build -t api .` *Note, the `.` is important here.*
 
 **Tag the Image**
 After the build completes, tag the image so you can push it to the repository:
-`docker tag api:latest [account-id].dkr.ecr.[region].amazonaws.com/api:latest`
+`docker tag api:(date +%s) [account-id].dkr.ecr.[region].amazonaws.com/api:(date +%s)`
+_Pro tip: the `(date +%s)` represents the image build version. Every time you build the image, you should increment this version number. Here, we are inserting a timestamp to tag the image. This allows you to roll back to a previous container image build if needed._
 
 **Push the image to ECR**
 Run `docker push` to push your imaage to ECR:
