@@ -1,19 +1,19 @@
 ## Step 2 - Deploy the Monolith
 
-#### 1. Launch an ECS Cluster using Cloudformation
+#### 1. Launch an ECS Cluster using AWS Cloudformation
 First, we'll create a an Amazon ECS cluster, deployed behind an Application Load Balancer.
 
 1. Navigate to the CloudFormation console: https://console.aws.amazon.com/cloudformation/home?.
 2. Select `Create Stack`.
 3. Select 'Upload a template to Amazon S3' and choose the `ecs.yml` file from the GitHub project at `amazon-ecs-nodejs-microservice/2-containerized/infrastructure/ecs.yml`
 Select `Next`.
-4. For stack name, enter `Nodejs-Monolith`.
+4. For stack name, enter `BreakTheMonolith-Demo`.
 Keep the other parameter values the same:
 `Desired Capacity = 2`
 `InstanceType = t2.micro`
 `MaxSize = 2`
 Select `Next`.
-5. It is not nessecary to modify any options on this page. Select `Next`.
+5. It is not necessary to modify any options on this page. Select `Next`.
 6. Check the box at the bottom of the next page and select `Create`.
 You will see your stack with the orange `CREATE_IN_PROGRESS`. You can select the refresh button at the top right of the screen to check on the progress. This process typically takes under 5 minutes.
 
@@ -40,8 +40,8 @@ The task definition tells Amazon ECS how to deploy our application containers ac
 * `Task Definition Name = api`.
 * Select `Add Container`.
 * Specify the following parameters. If a parameter is not defined, leave it blank or with the default settings:
-`Container name = default`
-`image = [account-id].dkr.ecr.[region].amazonaws.com/api:latest` the URL of your ECR respository image from the last step of this tutorial
+`Container name = api`
+`image = [account-id].dkr.ecr.[region].amazonaws.com/api:v1` the URL of your ECR repository image from the last step of this tutorial. Be sure the tag `:v1` matches the value you used in part 1 to tag and push the image.
 `Memory = Hard limit: 256`
 `Port mappings = Host port:0, Container port:3000`
 `CPU units = 256`
@@ -103,20 +103,21 @@ Default target group = `api`
 Now, we'll deploy the monolith as a service onto the cluster.
 
 * Navigate to the 'Clusters' menu on the left side of the Amazon ECS console.
-* Select your cluster: `Nodejs-Monolith-ECSCluster`.
+* Select your cluster: `BreakTheMonolith-Demo-ECSCluster`.
 * Under the services tab, select `Create`.
 * Configure the service (do not modify any default values):
 Service name = `api`
 Number of tasks = `1`
 * Select `Configure ELB`:
   * ELB Type = `Application Load Balancer`.
-  * For IAM role, select `Nodejs-Monolith-ECSServiceRole`.
-  * Select your Load Balancer `demo`.
+  * For IAM role, select `BreakTheMonolith-Demo-ECSServiceRole`.
+  * Select your Load Balancer `ELB name = demo`.
   * Select `Add to ELB`.
 * Add your service to the target group:
 Listener port = `80:HTTP`
 Target group name = select your group: `api`
 * Select `Save`.
+![image 2.6 - Service Configuration](images/2.6-config.png)
 * Select `Create Service`.
 * Select `View Service`.
 
@@ -130,11 +131,18 @@ Validate your deployment by checking if the service is available from the intern
 
 **To find your service URL:**
 * Navigate to the [Load Balancers](https://console.aws.amazon.com/ec2/v2/home?#LoadBalancers:) section of the EC2 Console.
-* Select your load balancer `demo-monolith`.
+* Select your load balancer `demo`.
 * Copy and paste the value for `DNS name` into your browser.
 * You should see a message 'Ready to receive requests'.
 
-**See the values for your service**
-The ALB routes traffic based on the request URL. To see the service, simply add the service name (api) to the end of your DNS Name like this: `http://[DNS name]/api`
+**See each part of the service**
+The node.js application routes traffic to each worker based on the URL. To see a worker, simply add the worker name `api/[worker-name]` to the end of your DNS Name like this:
+* `http://[DNS name]/api/users`
+* `http://[DNS name]/api/threads`
+* `http://[DNS name]/api/posts`
+
+You can also add a record number at the end of the URL to drill down to a particular record. Like this: `http://[DNS name]/api/posts/1` or `http://[DNS name]/api/users/2`
+
+![image - 2.7 - User Record](images/2.7-users.png)
 
 #### [Next](/Step-3.md)
