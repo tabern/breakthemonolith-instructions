@@ -17,7 +17,7 @@ Select `Next`.
 6. Check the box at the bottom of the next page and select `Create`.
 You will see your stack with the orange `CREATE_IN_PROGRESS`. You can select the refresh button at the top right of the screen to check on the progress. This process typically takes under 5 minutes.
 
-[image 2.1 - CF Creation]
+![image 2.1 - CF Creation](images/2.1 - CF Creation.png)
 
 ----
 ### 2. Check your cluster is running.
