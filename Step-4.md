@@ -143,7 +143,7 @@ _For example: Path = `/api/posts*` forward to `posts`_
   * users
 * Select the back arrow at the top left of the page to return to the load balancer console.
 
-![4.5 - Listener Rules](images/4.5.png)
+![4.5 - Listener Rules](images/4.5-rules.png)
 
 ---
 #### 6. Deploy your Microservices
@@ -170,7 +170,7 @@ Target group name = select your group: `[service-name]`
 
 It should only take a few seconds for all your servics to start.
 
-![image 4.6 - Cluster State](images/4.6.png)
+![image 4.6 - Cluster State](images/4.6-cluster.png)
 
 ---
 #### 7. Validate your Deployment (optional)
@@ -182,7 +182,7 @@ Validate your deployment by checking if the service is available from the intern
 * Copy and paste the value for `DNS name` into your browser.
 * You should see a message 'Ready to receive requests'.
 
-![4.7 - Ready to Receive](images/4.7r.png)
+![4.7 - Ready to Receive](images/4.7-ready.png)
 
 **See the values for each microservice**
 Your ALB routes traffic based on the request URL. To see each service, simply add the service name to the end of your DNS Name like this:
@@ -190,7 +190,7 @@ Your ALB routes traffic based on the request URL. To see each service, simply ad
 * `http://[DNS name]/api/threads`
 * `http://[DNS name]/api/posts`
 
-![IMAGE 4.7 - threads](images/4.7t.png)
+![IMAGE 4.7 - threads](images/4.7-threads.png)
 
 You can also use tools such as [Postman](https://www.getpostman.com/) for testing your APIs.
 

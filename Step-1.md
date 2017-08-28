@@ -33,7 +33,7 @@ Navigate to [https://github.com/awslabs/amazon-ecs-nodejs-microservices](https:/
 **Open the Project Files**
 Start Atom, select 'Add Project Folder', and select the folder where you saved the repository 'amazon-ecs-nodejs-microservices'. This will add the entire project into Atom so you can easily work with it.
 
-![Image 1.2 - Github Project](images/1,2,png)
+![Image 1.2 - Github Project](images/1.2-project.png)
 
 In your project folder, you should see folders for `infrastructure` and `services`. `infrastructure` holds the Cloudformation infrastructure configuration code we will use in the next step. `services` has the code that forms our node.js application.
 
@@ -48,7 +48,7 @@ Take a few minutes to click through the files and familiarize yourself with the 
 
 **Record repository information**
 * After you hit next, you should get a message that looks like this:
-![image 1.3 - New Repo](images/1.3.png)
+![image 1.3 - New Repo](images/1.3-create.png)
 
 * The repository address follows a simple format:
 [account-id].dkr.ecr.[region].amazonaws.com/[repo-name].
@@ -78,6 +78,6 @@ Run `docker push` to push your imaage to ECR:
 `docker push [account-id].dkr.ecr.[region].amazonaws.com/api:latest`
 
 If you navigate to your ECR repository, you should see your image tagged `latest`.
-![image 1.4 - ECR Image](images/1.4.png)
+![image 1.4 - ECR Image](images/1.4-images.png)
 
 #### [Next](/Step-2.md)

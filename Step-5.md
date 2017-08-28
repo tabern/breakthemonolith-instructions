@@ -20,11 +20,11 @@ Start cleaning up by spinning down each of the four services you have running ac
 * Select `Delete` on the service console page and confirm.
 * You will get a confirmation message and see your cluster empty.
 
-![5.1 - Service Delete Confirmation](images/5.1s.png)
+![5.1 - Service Delete Confirmation](images/5.1-service.png)
 
 Repeat these steps for each of your services across both clusters.
 
-![5.1 - Empty Cluster](images/5.1e.png)
+![5.1 - Empty Cluster](images/5.1-cluster.png)
 
 ---
 #### 2. Delete listeners
@@ -37,7 +37,7 @@ Repeat these steps for each of your services across both clusters.
 * demo-monolith
 * demo-microservices
 
-![5.2 - Delete Listeners](images/5.2.png)
+![5.2 - Delete Listeners](images/5.2-listener.png)
 
 ---
 #### 3. Delete target groups
@@ -46,7 +46,7 @@ Repeat these steps for each of your services across both clusters.
 * Select `Actions` > `Delete`.
 * Confirm Delete.
 
-![5.3 - Delete Target Groups](images/5.3.png)
+![5.3 - Delete Target Groups](images/5.3-targets.png)
 
 ---
 #### 4. Rollback your Cloudformation Stack
@@ -61,7 +61,7 @@ Repeat these steps for each of your services across both clusters.
 
 **WARNING! Be sure to delete both stacks. Leaving a stack running will result in charges on your AWS account.**
 
-![image 5.4 - Delete CF](images/5.4.png)
+![image 5.4 - Delete CF](images/5.4-stacks.png)
 
 ---
 #### 5. Deregister Task Definitions
@@ -79,4 +79,4 @@ Repeat these steps for each of your services across both clusters.
 * Select `Delete Repository` and confirm.
 * You will see a confirmation message and should have no more repositories.
 
-![image 5.6 - Delete Repos](images/5.6.png)
+![image 5.6 - Delete Repos](images/5.6-repositories.png)

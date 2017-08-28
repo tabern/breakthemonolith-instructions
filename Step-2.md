@@ -17,19 +17,19 @@ Select `Next`.
 6. Check the box at the bottom of the next page and select `Create`.
 You will see your stack with the orange `CREATE_IN_PROGRESS`. You can select the refresh button at the top right of the screen to check on the progress. This process typically takes under 5 minutes.
 
-![image 2.1 - CF Creation](images/2.1.png)
+![image 2.1 - CF Creation](images/2.1-stack.png)
 
 ----
 ### 2. Check your cluster is running.
 
 * Navigate to the [Amazon ECS console](https://console.aws.amazon.com/ecs/home?). Your cluster should appear in the list.
-![image 2.2 - Cluster Active](images/2.2a.png)
+![image 2.2 - Cluster Active](images/2.2-cluster.png)
 
 * Clicking into the cluster, select the 'Tasks' tab, no tasks will be running.
-![image 2.2 - Tasks](images/2.2c.png)
+![image 2.2 - Tasks](images/2.2-tasks.png)
 
 * Select the 'ECS Instances' tab, you will see the two EC2 Instances the Cloudformation template created.
-![image 2.2 - Instances](images/2.2b.png)
+![image 2.2 - Instances](images/2.2-instances.png)
 
 ---
 #### 3. Write a Task Definition
@@ -49,7 +49,7 @@ The task definition tells Amazon ECS how to deploy our application containers ac
 * Select `Create`.
 * Your Task Definition will now show up in the console.
 
-![image 2.3 - Task Definition](images/2.3.png)
+![image 2.3 - Task Definition](images/2.3-definition.png)
 
 ---
 #### 4. Configure the Application Load Balancer: Target Group
@@ -62,7 +62,7 @@ If this is not your first time using this AWS account, you may have multiple VPC
 * Select the checkbox to see the Load Balancer details.
 * Note the value for the `VPC` attribute on the details page.
 
-![image 2.4 - VPC](images/2.4v.png)
+![image 2.4 - VPC](images/2.4-vpc.png)
 
 **Configure the ALB Target Group**
 * Navigate to the [Target Group section of the EC2 Console](https://console.aws.amazon.com/ec2/v2/home?#TargetGroups:).
@@ -79,7 +79,7 @@ If this is not your first time using this AWS account, you may have multiple VPC
 `Interval = 6`
 * Select `Create`.
 
-![image 2.4 - Target Group](images/2.4t.png)
+![image 2.4 - Target Group](images/2.4-targets.png)
 
 ---
 #### 5. Configure the Application Load Balancer: Listener
@@ -96,7 +96,7 @@ Port = `80`
 Default target group = `api`
 * Click `Create`.
 
-![image 2.5 - Listener](images/2.5.png)
+![image 2.5 - Listener](images/2.5-listener.png)
 
 ---
 #### 6. Deploy the Monolith as a Service
@@ -120,7 +120,7 @@ Target group name = select your group: `api`
 * Select `Create Service`.
 * Select `View Service`.
 
-![image 2.6 - Running Service](images/2.6.png)
+![image 2.6 - Running Service](images/2.6-service.png)
 
 Nice work! You now have a running service. It may take a minute for the container to register as healthy and begin receiving traffic.
 
