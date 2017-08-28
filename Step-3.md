@@ -18,7 +18,7 @@ Repeat these steps for each microservice.
 
 You should have four repositories in Amazon ECR:
 
-[image 3.1 - Repositories]
+![image 3.1 - Repositories](images/3,1,png)
 
 ---
 #### 2. Authenticate Docker with AWS (optional)

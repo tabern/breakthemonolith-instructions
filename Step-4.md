@@ -100,7 +100,7 @@ The microservices stack we just deployed has its own VPC. It is important to con
 `Name = [service-name]`
 `Protocol = HTTP`
 `Port = 80`
-`VPC =` _select the VPC that matches your Load Balancer from the previous step.
+`VPC =` _select the VPC that matches your Load Balancer from the previous step_.
 **Advanced health check settings**:
 `Healthy threshold = 2`
 `Unhealthy threshold = 2`
@@ -143,7 +143,7 @@ _For example: Path = `/api/posts*` forward to `posts`_
   * users
 * Select the back arrow at the top left of the page to return to the load balancer console.
 
-[4.5 - Listener Rules]
+![4.5 - Listener Rules](images/4.5.png)
 
 ---
 #### 6. Deploy your Microservices
@@ -170,7 +170,7 @@ Target group name = select your group: `[service-name]`
 
 It should only take a few seconds for all your servics to start.
 
-[image 4.6 - Cluster State]
+![image 4.6 - Cluster State](images/4.6.png)
 
 ---
 #### 7. Validate your Deployment (optional)
@@ -182,7 +182,7 @@ Validate your deployment by checking if the service is available from the intern
 * Copy and paste the value for `DNS name` into your browser.
 * You should see a message 'Ready to receive requests'.
 
-[4.7 - Ready to Receive]
+![4.7 - Ready to Receive](images/4.7r.png)
 
 **See the values for each microservice**
 Your ALB routes traffic based on the request URL. To see each service, simply add the service name to the end of your DNS Name like this:
@@ -190,7 +190,7 @@ Your ALB routes traffic based on the request URL. To see each service, simply ad
 * `http://[DNS name]/api/threads`
 * `http://[DNS name]/api/posts`
 
-[IMAGE 4.7 - threads]
+![IMAGE 4.7 - threads](images/4.7t.png)
 
 You can also use tools such as [Postman](https://www.getpostman.com/) for testing your APIs.
 
