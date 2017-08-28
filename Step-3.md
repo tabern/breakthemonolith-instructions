@@ -18,7 +18,7 @@ Repeat these steps for each microservice.
 
 You should have four repositories in Amazon ECR:
 
-![image 3.1 - Repositories](images/3.1-repository,png)
+![image 3.1 - Repositories](images/3.1-repository.png)
 
 ---
 #### 2. Authenticate Docker with AWS (optional)
@@ -27,6 +27,7 @@ You may skip this step if you recently completed [Part 1](/getting-started/conta
 *Example: `aws ecr get-login --no-include-email --region us-west-2`*
 2. You're going to get a massive output starting with `docker login -u AWS -p` ... Copy this entire output, paste, and run it in the terminal.
 3. You should see `Login Succeeded`
+_Note: If this login does not succeed, it may be because you have a newer version of Docker that has depreciated the `-e none` flag. To correct this, paste the output into your text editor, remove `-e none` from the end of the output, and run the updated output in the terminal._
 
 ---
 #### 3. Build and push images for each service
@@ -42,12 +43,12 @@ Repeat these steps for each microservice image.
 * In the terminal, run `docker build -t [service-name] ./[service-name]`
 _Example `docker build -t posts ./posts`_
 * After the build completes, tag the image so you can push it to the repository:
-`docker tag [service-name]:latest [account-id].dkr.ecr.[region].amazonaws.com/[service-name]:latest`
-_example: `docker tag posts:latest [account-id].dkr.ecr.us-west-2.amazonaws.com/posts:latest`_
+`docker tag [service-name]:latest [account-id].dkr.ecr.[region].amazonaws.com/[service-name]:v1`
+_example: `docker tag posts:latest [account-id].dkr.ecr.us-west-2.amazonaws.com/posts:v1`_
 * Run `docker push` to push your imaage to ECR:
-`docker push [account-id].dkr.ecr.[region].amazonaws.com/[service-name]:latest`
+`docker push [account-id].dkr.ecr.[region].amazonaws.com/[service-name]:v1`
 
-If you navigate to your ECR repository, you should see your image tagged `latest`.
+If you navigate to your ECR repository, you should see your images tagged with `v1`.
 
 **NOTE: Be sure to build and tag all three images.**
 
