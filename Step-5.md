@@ -1,16 +1,13 @@
 ## Step 5 - Clean Up
 
 #### 1. Turn off your services
-Start cleaning up by spinning down each of the four services you have running across your two clusters.
-* Monolith Cluster
-  * api
-* Microservices Cluster
-  * posts
-  * threads
-  * users
+Start cleaning up by spinning down each of the services you have running on your cluster.
+* `posts`
+* `threads`
+* `users`
 
 **Update Service**
-* Open your cluster and click into a service.
+* Open the cluster and click into a service.
 * Select `Update`
 * Change `Number of tasks` to `0`
 * Select `Update Service`
@@ -18,24 +15,20 @@ Start cleaning up by spinning down each of the four services you have running ac
 
 **Delete Service**
 * Select `Delete` on the service console page and confirm.
-* You will get a confirmation message and see your cluster empty.
+* You will get a confirmation message and your cluster will be empty.
 
 ![5.1 - Service Delete Confirmation](images/5.1-service.png)
 
-Repeat these steps for each of your services across both clusters.
+Repeat these steps for each of your services on the cluster.
 
 ![5.1 - Empty Cluster](images/5.1-cluster.png)
 
 ---
 #### 2. Delete listeners
 * Navigate to the [Load Balancer section of the EC2 Console](https://console.aws.amazon.com/ec2/v2/home?#LoadBalancers:)
-* Select a load balancer and select the **Listeners** tab.
-* Select the listener, then `Actions` > `Delete`
+* Select your load balancer `demo` and select the **Listeners** tab.
+* Select the listener, then `Actions` > `Delete`.
 * Confirm delete. Your listener should be gone.
-
-**Repeat this step for both load balancers.**
-* demo-monolith
-* demo-microservices
 
 ![5.2 - Delete Listeners](images/5.2-listener.png)
 
@@ -49,17 +42,14 @@ Repeat these steps for each of your services across both clusters.
 ![5.3 - Delete Target Groups](images/5.3-targets.png)
 
 ---
-#### 4. Rollback your Cloudformation Stack
+#### 4. Rollback your AWS Cloudformation Stack
 * Navigate to the CloudFormation console: https://console.aws.amazon.com/cloudformation/home?
-* Check the box next to one of the Cloudformation stacks you created earlier
-  * Nodejs-Monolith
-  * Nodejs-Microservices
+* Check the box next to the Cloudformation stack you created earlier: `BreakTheMonolith-Demo`.
 * Select `Actions` > `Delete Stack`
 * Confirm Delete.
 * The stack status should change to `DELETE_IN_PROGRESS`
-* Repeat for the remaining stack.
 
-**WARNING! Be sure to delete both stacks. Leaving a stack running will result in charges on your AWS account.**
+**WARNING! Leaving a stack running will result in charges on your AWS account.**
 
 ![image 5.4 - Delete CF](images/5.4-stacks.png)
 

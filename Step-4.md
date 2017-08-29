@@ -41,9 +41,9 @@ Or with JSON:
 }
 ```
 **Repeat this step to create a task definition for each service**
-* posts
-* threads
-* users
+* `posts`
+* `threads`
+* `users`
 
 ---
 #### 2. Configure the Application Load Balancer: Target Groups
