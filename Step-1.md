@@ -1,6 +1,11 @@
 ## Step 1 - Containerize the Monolith
 
-#### 1. Get Setup
+1. [Get Setup](#part1)
+2. [Download and open the project](#part2)
+3. [Provision a repository using Amazon EC2 Container Registry (Amazon ECR)](#part3)
+4. [Build & Push the Docker Image](#part4)
+
+#### 1. Get Setup<a name="part1"></a>
 In the next few steps, we are going to be using **Docker**, **Github**, **Amazon ECS**, and **Amazon ECR** to deploy code into containers. To make sure you can complete these steps, you'll need to ensure you have the right tools.
 
 **Have an AWS Account**
@@ -26,7 +31,7 @@ If you don't already have a text editor for coding, we highly recommend installi
 
 ----
 
-#### 2. Download and open the project
+#### 2. Download and open the project<a name="part2"></a>
 **Download code from GitHub**
 Navigate to [https://github.com/awslabs/amazon-ecs-nodejs-microservices](https://github.com/awslabs/amazon-ecs-nodejs-microservices) and select 'Clone or Download' to download the GitHub repository to your local environment. You can also use [GitHub Desktop](https://desktop.github.com/) or [Git](https://git-scm.com/) to clone the repository.
 
@@ -40,7 +45,7 @@ In your project folder, you should see folders for `infrastructure` and `service
 Take a few minutes to click through the files and familiarize yourself with the different aspects of the application, including the database `db.json`, the server `server.js`, [npm dependancy declarations](https://docs.npmjs.com/how-npm-works/packages#what-is-a-package) `package.json`, and the [Dockerfile](https://docs.docker.com/engine/reference/builder/) `dockerfile`.
 
 ---
-#### 3. Provision a repository using Amazon EC2 Container Registry (Amazon ECR)
+#### 3. Provision a repository using Amazon EC2 Container Registry (Amazon ECR)<a name="part3"></a>
 **Create the repository**
 * Navigate to the [Amazon ECR Console](https://console.aws.amazon.com/ecs/home?#/repositories).
 * Select `Create Repository`.
@@ -56,7 +61,7 @@ Take a few minutes to click through the files and familiarize yourself with the 
 **Take note of this address, including your account ID and the region you are using, you'll need it in the next steps.**
 
 ---
-#### 4. Build & Push the Docker Image
+#### 4. Build & Push the Docker Image<a name="part4"></a>
 Open your terminal, and set your path to the `2-containerized/services/api` section of the GitHub code in the directory you have it cloned or downloaded it into: `~/amazon-ecs-nodejs-microservices/2-containerized/services/api`.
 
 **Authenticate Docker Login with AWS**
