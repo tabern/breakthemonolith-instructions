@@ -5,4 +5,3 @@ Each README in this repo holds the instructions for implementing https://github.
 2. [Deploy the Monolith](/Step-2.md)
 3. [Break the Monolith](/Step-3.md)
 4. [Deploy Microservices](/Step-4.md)
-5. [Clean Up](/Step-5.md)
