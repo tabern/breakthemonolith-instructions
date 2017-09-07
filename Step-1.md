@@ -1,4 +1,4 @@
-## Step 1 - Containerize the Monolith
+##Step 1 - Containerize the Monolith
 
 #### 1. Get Setup
 In the next few steps, we are going to be using **Docker**, **Github**, **Amazon ECS**, and **Amazon ECR** to deploy code into containers. To make sure you can complete these steps, you'll need to ensure you have the right tools.
